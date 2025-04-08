@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Infantil - Centro Histórico</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body> 
+
+  <div class="section-background">
+    <div class="row" style="text-align: center;">
+        <div class="col-md-3 col-sm-3 col-3">
+            <img src="img/logo_blanco.svg" class="logogobierno" style="max-width: 100%; height: auto;">
+        </div>
+        <div class="col-md-3 col-sm-3 col-3">
+            <img src="img/INAH.png" class="logogobierno" style="max-width: 100%; height: auto; margin: 0 auto; display: block;"> <!-- Centrada -->
+        </div>
+        <div class="col-md-3 col-sm-3 col-3">
+            <img src="img/Logo_culhucan.png" class="logogobierno" style="max-width: 100%; height: auto;">
+        </div>
+    </div>
+</div>
+<body>
+  <nav>
+    <ul class="menu-horizontal">
+      <li><a href="#">Inicio</a></li>
+      <li>
+        <a href="#">Extenciones</a>
+        <ul class="menu-vertical">
+          <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://www.bnah.inah.gob.mx/">BNAH</a></li>
+          <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://mediateca.inah.gob.mx/islandora_74/">Mediatecainah</a></li> 
+          <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://www.cervantesvirtual.com/">Cervantesvirtual</a></li>
+          <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://historicas.unam.mx/publicaciones/publicadigital/libros/252/convento-agustino.html">Investigaciones Históricas</a></li>
+          <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://artsandculture.google.com/story/FgWBS718F4CALw">Memorias del mundo</a></li> 
+          <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://www.enah.edu.mx/index.php/pres-biblio">Biblioteca "Guillermo Bonfil Batalla"</a></li>
+          <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://unab.edu.co/las-14-mejores-bibliotecas-virtuales/">Mejores bibiotecas virtuales</a></li>
+          <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://ebiblioteca.org/lecturas/">eBiblioteca</a></li> 
+          <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://bibliotecavirtualdemexico.cultura.gob.mx/">Biblioteca Virtual </a></li>
+          <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://revistas.inah.gob.mx/index.php/rutasdecampo/index">Revistas INAH</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Ex Convento</a>
+        <ul class="menu-vertical">
+          <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://exconventodeculhuacan.inah.gob.mx/consulta/index.php">Principal</a></li>
+          <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://exconventodeculhuacan.inah.gob.mx/consulta/biblioteca.php?id_contenido=MjU=">Biblioteca</a></li> 
+          
+        </ul>
+      </li>
+      <li><a target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://www.librosdelasep.mx/descarga-libros-antiguos-de-la-sep/">Libros Antiguos Sep</a></li>
+    </ul>
+  </nav>
+</body>
+
+  <!-- Encabezado -->
+  <header>
+    <div class="header-content">
+      <h1 class="title">Catálogo Infantil - Centro Histórico</h1>
+      <div class="search-bar">
+        <input type="text" id="search" placeholder="Buscar libro...">
+      </div>
+    </div>
+    <div class="header-images">
+      <img src="img/imag7.jpg" alt="Imagen 1" class="header-img"> 
+      <img src="img/img2.jpg" alt="Imagen 2" class="header-img"> 
+      <img src="img/Img3.jpg" alt="Imagen 3" class="header-img"> 
+    </div>
+  </header>
+
+  <!-- Catálogo de Libros -->
+  <section id="bookCatalog">
+    <div id="searchResults" class="book-list"></div>
+  </section>
+
+  <!-- Modal para mostrar la sinopsis -->
+<div id="synopsisModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="shortSynopsis"></div>
+    <div id="longSynopsis"></div>
+    <div id="fullSynopsis"></div>
+    <button id="moreSynopsisBtn">Ver más</button> <!-- Botón para ver más sinopsis -->
+  </div>
+</div>
+  <!-- Modal para el administrador (ver si se puede descargar) -->
+  <div id="adminModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Notificación de Solicitud de Descarga</h2>
+      <p id="adminMessage"></p>
+      <button id="allowDownloadBtn">Permitir descarga</button>
+      <button id="denyDownloadBtn">Denegar descarga</button>
+    </div>
+  </div>
+
+  <!-- Información del Lugar y Redes Sociales -->
+  <footer>
+    <div class="place-info">
+      <h2>Visítanos en el Centro Histórico Ex Convento Culhuacán</h2>
+      <p>Ubicación: C. Morelos 10, Culhuacán, Iztapalapa, 09800 Ciudad de México, CDMX.</p>
+    </div>
+    <div class="social-media">
+      <h3>Síguenos en nuestras redes sociales:</h3>
+      <ul>
+
+        <!-- From Uiverse.io by roajuan93 --> 
+<div class="card">
+  <a href="https://www.instagram.com/exconventoculhuacan/" class="socialContainer containerOne" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">
+    <svg class="socialSvg instagramSvg" viewBox="0 0 16 16">
+      <path
+        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+      ></path>
+    </svg>
+  </a>
+<!--
+  <a href="https://www.tiktok.com/@exconventodeculhuacan" class="socialContainer containerTwo">
+    <span class="icon">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="33" viewBox="0 0 120 120" height="33" fill="none">
+        <linearGradient y2=".304922" y1="120.316" x2="119.695" x1="-.315704" gradientUnits="userSpaceOnUse" id="a">
+          <stop stop-color="#111" offset="0">
+          </stop>
+          <stop stop-color="#111111" offset="1">
+          </stop>
+        </linearGradient>
+        <linearGradient y2="8.24531" y1="106.225" x2="96.1079" x1="9.51229" gradientUnits="userSpaceOnUse" id="b">
+          <stop stop-color="#b5053c" offset="0"></stop><stop stop-color="#c90441" offset=".233">
+          </stop><stop stop-color="#f0014b" offset=".737"></stop>
+          <stop stop-color="#ff004f" offset="1">
+          </stop>
+        </linearGradient>
+        <linearGradient y2="4.31615" y1="107.524" x2="99.259" x1="8.04132" gradientUnits="userSpaceOnUse" id="c">
+          <stop stop-color="#00b2c9" offset="0">
+          </stop>
+          <stop stop-color="#00c8d4" offset=".283">
+          </stop>
+          <stop stop-color="#00e6e4" offset=".741"></stop><stop stop-color="#00f1ea" offset="1">
+          </stop></linearGradient><linearGradient y2="-74.0346" y1="166.882" x2="152.254" x1="-59.6216" gradientUnits="userSpaceOnUse" id="d">
+            <stop stop-color="#dde3e4" offset="0">
+            </stop><stop stop-color="#fcf7f7" offset="1"></stop></linearGradient>
+            <path fill="url(#a)" d="m60 0c-33.1371 0-60 26.8629-60 60s26.8629 60 60 60 60-26.8629 60-60-26.8629-60-60-60z">
+            </path><path fill="url(#b)" d="m92.2802 43.9526c-2.2273 0-4.4327-.4387-6.4905-1.291-2.0577-.8523-3.9274-2.1016-5.5024-3.6765-1.5749-1.5749-2.8242-3.4446-3.6766-5.5023-.8523-2.0578-1.291-4.2633-1.291-6.4905h-12.1172v47.4487c-.0023 2.1633-.6854 4.271-1.9525 6.0244-1.2671 1.7533-3.0539 3.0634-5.1072 3.7446-2.0532.6811-4.2688.6988-6.3326.0504-2.0639-.6484-3.8713-1.9298-5.1661-3.6628-1.2949-1.733-2.0115-3.8295-2.0482-5.9925-.0368-2.163.6081-4.2827 1.8434-6.0586 1.2352-1.776 2.998-3.1181 5.0387-3.8362 2.0406-.7182 4.2555-.7758 6.3307-.1648v-11.7788c-4.4102-.5947-8.8969.1703-12.861 2.1927-3.964 2.0223-7.2167 5.2059-9.3238 9.1256s-2.9682 8.3889-2.4683 12.8109c.4998 4.422 2.3368 8.5862 5.2656 11.9367s6.8101 5.7277 11.1255 6.8143c4.3155 1.0865 8.8597.8306 13.0259-.7335s7.7561-4.362 10.2903-8.02c2.5342-3.6581 3.8921-8.0022 3.8924-12.4524l.3516-23.984c4.9786 3.6549 10.9958 5.6215 17.1719 5.6123z">
+            </path><path fill="url(#c)" d="m89.077 40.6519c-4.4981-.0002-8.8119-1.7871-11.9925-4.9678s-4.9674-7.4947-4.9673-11.9928h-12.1172v47.4488c-.0023 2.1633-.6853 4.271-1.9524 6.0244-1.267 1.7534-3.0538 3.0635-5.1071 3.7447-2.0532.6812-4.2688.6989-6.3327.0505-2.0638-.6483-3.8713-1.9298-5.1662-3.6627-1.2948-1.733-2.0114-3.8295-2.0482-5.9925s.6081-4.2827 1.8433-6.0587c1.2353-1.776 2.9981-3.1181 5.0387-3.8363 2.0407-.7181 4.2556-.7757 6.3308-.1647v-11.779c-4.4102-.5947-8.8969.1702-12.861 2.1926-3.964 2.0224-7.2167 5.206-9.3238 9.1257s-2.9682 8.3889-2.4683 12.8109c.4998 4.4219 2.3368 8.5862 5.2656 11.9367 2.9288 3.3504 6.8101 5.7277 11.1255 6.8142 4.3155 1.0865 8.8597.8307 13.0259-.7334s7.7561-4.362 10.2903-8.0201c2.5342-3.658 3.8921-8.0022 3.8924-12.4523l.3535-23.9839c4.9786 3.6549 10.9958 5.6214 17.1719 5.6122z">
+            </path><path fill="url(#d)" d="m89.077 43.6493c-4.1924-.8067-7.9265-3.1649-10.4566-6.6038-3.1979-2.5027-5.3914-6.07-6.1816-10.0532h-9.2363v47.4487c-.0002 2.2519-.7366 4.4419-2.098 6.2357s-3.2724 3.0929-5.4412 3.6989-4.4764.4857-6.5705-.3426c-2.094-.8283-3.8595-2.3191-5.027-4.2447-2.0761-1.3513-3.5967-3.4046-4.2839-5.7845-.6871-2.3799-.495-4.9277.5412-7.1777 1.0363-2.25 2.8475-4.052 5.1027-5.0768 2.2553-1.0247 4.804-1.2038 7.1804-.5045v-8.6679c-4.0761.0525-8.0564 1.2433-11.4916 3.438s-6.1885 5.306-7.9492 8.9826-2.4586 7.7721-2.015 11.8244c.4436 4.0522 2.0111 7.8997 4.5255 11.1083 3.1921 2.6636 7.0774 4.362 11.2003 4.8961 4.123.5341 8.3128-.1181 12.0783-1.8803 3.7655-1.7623 6.9506-4.5614 9.1819-8.0693 2.2314-3.5079 3.4165-7.5792 3.4164-11.7366l.3535-23.9839c4.9786 3.6549 10.9958 5.6214 17.1719 5.6122z">
+            </path>
+          </svg>
+        </span>
+  </a>--> 
+  <a href="https://www.tiktok.com/@exconventodeculhuacan" class="socialContainer containerTwo" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">
+    <svg
+      class="socialSvg tiktokSvg largeIcon"
+      viewBox="0 0 48 48"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <title>Tiktok</title>
+      <g
+        id="Icon/Social/tiktok-white"
+        stroke="none"
+        stroke-width="1"
+        fill="none"
+        fill-rule="evenodd"
+      >
+        <path
+          d="M38.0766847,15.8542954 C36.0693906,15.7935177 34.2504839,14.8341149 32.8791434,13.5466056 C32.1316475,12.8317108 31.540171,11.9694126 31.1415066,11.0151329 C30.7426093,10.0603874 30.5453728,9.03391952 30.5619062,8 L24.9731521,8 L24.9731521,28.8295196 C24.9731521,32.3434487 22.8773693,34.4182737 20.2765028,34.4182737 C19.6505623,34.4320127 19.0283477,34.3209362 18.4461858,34.0908659 C17.8640239,33.8612612 17.3337909,33.5175528 16.8862248,33.0797671 C16.4386588,32.6422142 16.0833071,32.1196657 15.8404292,31.5426268 C15.5977841,30.9658208 15.4727358,30.3459348 15.4727358,29.7202272 C15.4727358,29.0940539 15.5977841,28.4746337 15.8404292,27.8978277 C16.0833071,27.3207888 16.4386588,26.7980074 16.8862248,26.3604545 C17.3337909,25.9229017 17.8640239,25.5791933 18.4461858,25.3491229 C19.0283477,25.1192854 19.6505623,25.0084418 20.2765028,25.0219479 C20.7939283,25.0263724 21.3069293,25.1167239 21.794781,25.2902081 L21.794781,19.5985278 C21.2957518,19.4900128 20.7869423,19.436221 20.2765028,19.4380839 C18.2431278,19.4392483 16.2560928,20.0426009 14.5659604,21.1729264 C12.875828,22.303019 11.5587449,23.9090873 10.7814424,25.7878401 C10.003907,27.666593 9.80084889,29.7339663 10.1981162,31.7275214 C10.5953834,33.7217752 11.5748126,35.5530237 13.0129853,36.9904978 C14.4509252,38.4277391 16.2828722,39.4064696 18.277126,39.8028054 C20.2711469,40.1991413 22.3382874,39.9951517 24.2163416,39.2169177 C26.0948616,38.4384508 27.7002312,37.1209021 28.8296253,35.4300711 C29.9592522,33.7397058 30.5619062,31.7522051 30.5619062,29.7188301 L30.5619062,18.8324027 C32.7275484,20.3418321 35.3149087,21.0404263 38.0766847,21.0867664 L38.0766847,15.8542954 Z"
+          id="Fill-1"
+          fill="#FFFFFF"
+        ></path>
+      </g>
+    </svg>
+  </a>
+
+  <a href="https://www.facebook.com/inahexconventoculhuacan/" class="socialContainer containerThree" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">
+    <div>
+      <svg
+        class="socialSvg tiktokSvg largeIcon"
+        width="44px"
+        height="44px"
+        viewBox="0 0 45 35"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <title>Facebook</title>
+        <g
+          id="Icon/Social/facebook-black"
+          stroke="none"
+          stroke-width="1"
+          fill="none"
+          fill-rule="evenodd"
+        >
+          <path
+            d="M30.0793333,40 L30.0793333,27.608 L34.239,27.608 L34.8616667,22.7783333 L30.0793333,22.7783333 L30.0793333,19.695 C30.0793333,18.2966667 30.4676667,17.344 32.4726667,17.344 L35.0303333,17.3426667 L35.0303333,13.0233333 C34.5876667,12.9646667 33.0696667,12.833 31.3036667,12.833 C27.6163333,12.833 25.0923333,15.0836667 25.0923333,19.2166667 L25.0923333,22.7783333 L20.922,22.7783333 L20.922,27.608 L25.0923333,27.608 L25.0923333,40 L30.0793333,40 Z M9.766,40 C8.79033333,40 8,39.209 8,38.234 L8,9.766 C8,8.79033333 8.79033333,8 9.766,8 L38.2336667,8 C39.209,8 40,8.79033333 40,9.766 L40,38.234 C40,39.209 39.209,40 38.2336667,40 L9.766,40 Z"
+            id="Shape"
+            fill="#FFFFFF"
+          ></path>
+        </g>
+      </svg>
+    </div>
+  </a>
+
+  <a href="https://chat.whatsapp.com/K6ziNKW7p876YqLw0Az9sh" class="socialContainer containerFour" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">
+    <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+      ></path>
+    </svg>
+  </a>
+</div>
+  </footer>   
+<style>
+  .pie{
+  width: 100%;	
+  }
+  .main-footer .list-info {
+  line-height: auto;
+  /* background-color: #12322B; */
+  /* background-image: url(https://framework-gb.cdn.gob.mx/landing/img/fondofooter3.svg); */
+  color: white;
+  background-size: cover;
+  background-position: bottom;
+  padding: 30px 10px 10px;
+  /* margin-bottom: 30px; */
+}
+.main-footer {
+  background-color: #611232;
+  min-height: 56px;
+  color: #FFF;
+  padding: 0px 0 0px;
+  text-align: left;
+  font-weight: 300;
+}	
+.main-footer .list-info h5 {
+  font-weight: 300;
+  margin-bottom: 20px;
+}	
+.main-footer .list-info ul {
+  margin: 0 0 60px;
+  padding: 0;
+}
+.main-footer .list-info ul li {
+  list-style-type: none;
+  margin: 0 0 2px;
+  padding: 0;
+  line-height: 110%;
+}
+.main-footer .list-info a {
+  color: #FFF;
+  font-size: 14px;
+  text-decoration: none;
+}	
+.container, .container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+}	
+  
+.row {
+  display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;
+}	
+  .col-sm-3{
+  
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}	
+.footer-pleca {
+  background-color: #fff;
+background: url("flores.png"); 
+  width: 100%;
+}	
+</style>	
+<body>
+    <footer class="main-footer">
+      
+    <div style="text-align: center;">
+          <a href="https://www.gob.mx/privacidadsimplificado" target="_blank" style="color: white; font-size:14px ;text-decoration: none;">Aviso de privacidad simplificado</a>
+      </div>
+      <div class="list-info">
+        <div class="container">
+                  <div class="row">
+              <div class="col-sm-3">
+          <img data-v-9e928f9a="" src="https://framework-gb.cdn.gob.mx/gobmx/img/logo_blanco.svg" href="/" alt="logo gobierno de mÃƒÂ©xico" class="logo_footer" style="max-width: 90%;">
+      </div>
+      <div class="col-sm-3">
+          <h5>Enlaces</h5>
+      <ul>
+          <li>
+      <a href="https://participa.gob.mx" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Participa</a>
+      </li>
+          <li>
+              <a href="https://www.gob.mx/publicaciones" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Publicaciones Oficiales</a>
+          </li>
+          <li>
+              <a href="http://www.ordenjuridico.gob.mx" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Marco Jurídico</a>
+          </li>
+          <li>
+              <a href="https://consultapublicamx.inai.org.mx/vut-web/" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Plataforma Nacional de Transparencia</a>
+          </li>
+          <li>
+              <a href="https://alertadores.funcionpublica.gob.mx/" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Alerta</a>
+          </li>
+          <li>
+              <a href="https://sidec.funcionpublica.gob.mx" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Denuncia</a>
+          </li>
+      </ul>
+      </div>
+      <div class="col-sm-3">
+          <h5>¿Qué es gob.mx?</h5>
+          <p>Es el portal único de trámites,<br>información y participación ciudadana.</br> 
+          <a href="https://www.gob.mx/que-es-gobmx">Leer más</a>
+      </p>
+      <ul>
+          <li>
+              <a href="https://datos.gob.mx">Portal de datos abiertos</a>
+          </li>
+          <li>
+              <a href="https://www.gob.mx/accesibilidad">Declaración de accesibilidad</a>
+          </li>
+          <li>
+              <a href="https://www.gob.mx/privacidadintegral">Aviso de privacidad integral</a>
+          </li>
+          <li>
+              <a href="https://www.gob.mx/privacidadsimplificado">Aviso de privacidad simplificado</a>
+          </li>
+          <li>
+              <a href="https://www.gob.mx/terminos">Términos y Condiciones</a>
+          </li>
+          <li>
+              <a href="https://www.gob.mx/terminos#medidas-seguridad-informacion">Política de seguridad</a>
+          </li>
+          <li>
+              <a href="https://www.gob.mx/sitemap">Mapa de sitio</a>
+          </li>
+      </ul>
+      </div>
+          <div class="col-sm-3"><h5><a href="https://www.gob.mx/tramites/ficha/presentacion-de-quejas-y-denuncias-en-la-sfp/SFP54">Denuncia contra servidores públicos</a></h5><h5>Síguenos en</h5>
+              <ul class="list-inline">
+                  <li>
+                      <a class="social-icon facebook" target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://www.facebook.com/gobmexico" aria-label="Facebook de presidencia"></a>
+                  </li>
+                  <li>
+                      <a class="social-icon twitter" target="_blank" rel="noopener" title="Enlace abre en ventana nueva" href="https://twitter.com/GobiernoMX" aria-label="Twitter de presidencia"></a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  </footer>
+
+  <script src="scripts.js">
+  </script>
+  <div class="image-strip">
+  <img src="img/Patron4.png">
+</div>
+</body>
+</html>
