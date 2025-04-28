@@ -1,6 +1,6 @@
 /* Estilo General */
 body {
-  font-family: 'Times New Roman', sans-serif;
+  font-family: 'Times New Roman';
   margin: 0;
   padding: 0;
   background-color: #252121;
@@ -11,13 +11,12 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Times New Roman';
-}
+  font-family: 'Times New Roman ';}
 .menu-horizontal {
   list-style: none;
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+  flex-wrap: wrap;/* Permite que los elementos se ajusten en varias líneas */
 }
 .menu-horizontal > li > a {
   display: block;
@@ -26,7 +25,7 @@ body {
   text-decoration: none;
 }
 .menu-horizontal > li:hover {
-  background-color: #82c592;
+  background-color: #a2efb4;
 }
 .menu-vertical {
   position: absolute;
@@ -47,7 +46,7 @@ body {
   padding: 15px 15px 15px 20px;
   text-decoration: none;
 }
-/* Media Queries para dispositivos móviles */
+/* Media para dispositivos móviles */
 @media (max-width: 768px) {
   .menu-horizontal {
     flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
@@ -64,37 +63,32 @@ body {
 /*Imagenes*/
 .section-background {
   display: flex;
-  justify-content: space-between; /* Distribuye las imágenes entre los lados */
-  align-items: center; /* Alinea las imágenes verticalmente */
-  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-  padding: 10px; /* Espacio alrededor del contenedor */
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%; 
+  padding: 10px; 
 }
-
 .row {
-  display: flex; /* Alinea los elementos en fila */
-  justify-content: space-between; /* Espacio entre las imágenes */
-  align-items: center; /* Alineación vertical en el centro */
-  width: 100%; /* Ocupa todo el ancho disponible */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%; 
 }
-
 .col-md-4, .col-sm-4, .col-4 {
   display: flex;
-  justify-content: center; /* Centra las imágenes en cada columna */
-  align-items: center; /* Centra verticalmente las imágenes */
-  flex: 1; /* Cada columna toma el mismo espacio */
+  justify-content: center; 
+  align-items: center; 
+  flex: 1; 
 }
-
 /* Estilo para que las imágenes se comporten correctamente en dispositivos más pequeños */
 @media (max-width: 768px) {
   .section-background {
     flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
   }
-
   .row {
     flex-direction: column; /* Las imágenes se alinean en columna */
     align-items: center; /* Centra las imágenes en dispositivos pequeños */
   }
-
   .col-md-4, .col-sm-4, .col-4 {
     width: 100%; /* Las columnas ocupan todo el ancho en dispositivos pequeños */
     margin-bottom: 10px; /* Añade un poco de espacio entre las imágenes */
@@ -102,7 +96,7 @@ body {
 }
 /* Estilo general para el header */
 header {
-background-color: #9ae79a; /* Verde brillante */
+background-color: #9ae79a; 
 color: #252121;
 padding: 20px;
 text-align: center;
@@ -116,61 +110,57 @@ margin-top: 15px;
 }
 .search-bar input {
 padding: 10px;
-width: 60%; /* Porcentaje ajustable */
+width: 60%; 
 font-size: 16px;
 border: 2px solid #fff;
 border-radius: 5px;
 }
 .search-bar input:focus {
-border-color: #9187c0; /* Rojo suave al enfocar*/
+border-color: #75b4e8; 
 }
 /* Contenedor del slider de imágenes */
 .image-slider {
 width: 100%;
-overflow: hidden; /* Ocultar imágenes fuera del área visible */
+overflow: hidden; 
 margin-top: 20px;
 }
 /* Contenedor de las imágenes */
 .header-images {
 display: flex;
-justify-content: space-around; /* Alinea las imágenes horizontalmente */
-flex-wrap: wrap; /* Permite que las imágenes se ajusten a varias filas si es necesario */
+justify-content: space-around; 
+flex-wrap: wrap; 
 margin-top: 20px;
 }
 /* Estilo para las imágenes */
 .header-img {
-width: 100%;  /* Las imágenes ocupan el 100% del ancho disponible */
-max-width: 400px; /* Limita el tamaño máximo de las imágenes */
+width: 100%; 
+max-width: 400px; 
 height: auto;
 border-radius: 40px;
 margin: 10px;
 box-shadow: 0 40px 8px rgba(0, 0, 0, 0.1);
 }
-
 /* Efecto de hover */
 .header-img:hover {
-transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+transform: scale(1.05); 
 transition: transform 0.4s ease;
 }
 
 /* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
 .title {
-  font-size: 1.8em; /* Reduce el tamaño del título en pantallas pequeñas */
+  font-size: 1.8em; 
 }
-
 .search-bar input {
-  width: 90%; /* La barra de búsqueda ocupa más espacio en pantallas pequeñas */
+  width: 90%; 
 }
-
 .header-images {
-  justify-content: center; /* Centra las imágenes en pantallas pequeñas */
+  justify-content: center;
 }
-
 .header-img {
-  width: 80%; /* Las imágenes ocupan el 80% del ancho disponible */
-  max-width: 100%; /* Asegura que las imágenes no se desborden */
-  margin: 10px 0; /* Ajusta el espacio entre las imágenes */
+  width: 80%; 
+  max-width: 100%; 
+  margin: 10px 0; 
 }
 }
 /* Catálogo de Libros */
@@ -178,9 +168,7 @@ transition: transform 0.4s ease;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 20px;
-}
-
+  margin-top: 20px;}
 .book-item {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -190,74 +178,54 @@ transition: transform 0.4s ease;
   width: 200px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease;
-}
-
+  transition: transform 0.3s ease;}
 .book-item:hover {
-  transform: scale(1.05);
-}
-
+  transform: scale(1.05);}
 .book-item img {
   width: 80%;
   height: auto;
-  border-radius: 8px;
-}
-
+  border-radius: 8px;}
 .book-item h3 {
   font-size: 1.2em;
-  color: #333;
-}
-
+  color: #333;}
 .book-item p {
   font-size: 1em;
-  color: #666;
-}
-
+  color: #666;}
 
 /* Footer - Información y Redes Sociales */
 footer {
   background-color: #446a41;
   color: white;
   padding: 40px 20px;
-  text-align: center;
-}
-
+  text-align: center;}
 .place-info h2 {
   font-size: 1.8em;
-  margin-bottom: 10px;
-}
-
+  margin-bottom: 10px;}
 .place-info p {
-  font-size: 1.1em;
-}
-
-
+  font-size: 1.1em;}
 .modal {
-  display: none; /* Oculto por defecto */
-  position: fixed; /* Fijo en la pantalla */
-  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
   left: 0;
   top: 0;
-  width: 100%; /* Ancho completo */
-  height: 100%; /* Alto completo */
-  overflow: auto; /* Permitir desplazamiento si es necesario */
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.5); 
 }
-
 .modal-content {
   position: relative;
-  margin: 15% auto; /* Centrar el modal */
+  margin: 15% auto; 
   padding: 20px;
-  background-color: white; /* Fondo blanco para el contenido */
-  max-width: 600px; /* Ancho máximo del modal */
-  max-height: 80vh; /* Limitar la altura del modal */
-  overflow-y: auto; /* Permitir desplazamiento en el contenido */
+  background-color: white; 
+  max-width: 600px; 
+  max-height: 80vh; 
+  overflow-y: auto; 
 }
-
 #shortSynopsis, #longSynopsis, #fullSynopsis {
-  margin-bottom: 10px; /* Espaciado entre las sinopsis */
+  margin-bottom: 10px; 
 }
-
 
 /* From Uiverse.io by roajuan93 */ 
 .card {
@@ -271,7 +239,6 @@ footer {
   gap: 20px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
 }
-
 /* for all social containers*/
 .socialContainer {
   width: 52px;
@@ -344,8 +311,6 @@ footer {
     opacity: 1;
   }
 }
-
-
 /* From Uiverse.io by NorthFishHasNa */ 
 button {
   display: inline-block;
@@ -361,21 +326,18 @@ button {
   cursor: pointer;
   margin: 5px;
 }
-
 .drive-icon {
   width: 5px; /* Ajusta el tamaño según sea necesario */
   height: auto; /* Mantiene la proporción de la imagen */
   vertical-align: middle; /* Alinea la imagen verticalmente con el texto */
   margin-right: 4px; /* Espacio entre la imagen y el texto */
 }
-
 button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
-
 button span:after {
   content: '»';
   position: absolute;
@@ -384,11 +346,9 @@ button span:after {
   right: -15px;
   transition: 0.5s;
  }
- 
  button:hover span {
   padding-right: 15px;
  }
- 
  button:hover span:after {
   opacity: 1;
   right: 0;
@@ -407,8 +367,6 @@ button span:after {
   text-indent: 15px;
   border: none;
  }
-
- 
 /* From Uiverse.io by G4b413l */ 
 .buttonDownload {
   display: inline-block;
@@ -423,28 +381,28 @@ button span:after {
   text-indent: 15px;
   border: none;
  }
- 
- .buttonDownload:hover {
+ .buttonDownload:hover
+{
   background-color: #45a21a;
   color: white;
  }
- 
- .buttonDownload:before, .buttonDownload:after {
+ .buttonDownload:before, .buttonDownload:after
+{
   content: ' ';
   display: block;
   position: absolute;
   left: 15px;
   top: 52%;
  }
- 
- .buttonDownload:before {
+ .buttonDownload:before 
+{
   width: 10px;
   height: 2px;
   border-style: solid;
   border-width: 0 2px 2px;
  }
- 
- .buttonDownload:after {
+ .buttonDownload:after 
+{
   width: 0;
   height: 0;
   margin-left: 3px;
@@ -456,37 +414,33 @@ button span:after {
   animation: downloadArrow 1s linear infinite;
   animation-play-state: paused;
  }
- 
- .buttonDownload:hover:before {
+ .buttonDownload:hover:before 
+{
   border-color: #cdefbd;
  }
- 
- .buttonDownload:hover:after {
+ .buttonDownload:hover:after
+{
   border-top-color: #cdefbd;
   animation-play-state: running;
  }
- 
- @keyframes downloadArrow {
+ @keyframes downloadArrow 
+{
   0% {
    margin-top: -7px;
    opacity: 1;
   }
- 
   0.001% {
    margin-top: -15px;
    opacity: 0.4;
   }
- 
   50% {
    opacity: 1;
   }
- 
   100% {
    margin-top: 0;
    opacity: 0.4;
   }
  }
-
 /* Estilo para el Modal */
 .modal {
   display: none; 
@@ -499,7 +453,6 @@ button span:after {
   background-color: rgba(0, 0, 0, 0.4); 
   overflow: auto;
 }
-
 .modal-content {
   background-color: #fefefe;
   border-radius: 10px;
@@ -509,21 +462,17 @@ button span:after {
   width: 80%;
   max-width: 500px;
 }
-
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
-
-.close:hover,
-.close:focus {
+.close:hover,.close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
-
 /* Asegurarse de que las sinopsis no se vean amontonadas */
 #shortSynopsis, #longSynopsis, #fullSynopsis {
   margin-bottom: 20px;
@@ -531,13 +480,11 @@ button span:after {
   font-size: 1.1em; /* Tamaño de fuente ajustado */
   line-height: 1.6; /* Espaciado entre líneas */
 }
-
 /**/
 pre {
   margin-top:0;
   margin-bottom:1rem;
   overflow:auto;
-  -ms-overflow-style:scrollbar
 }
 figure {
   margin:0 0 1rem
@@ -546,7 +493,6 @@ img {
   vertical-align:middle;
   border-style:none
 }
-
 svg {
   overflow:hidden;
   vertical-align:middle
@@ -565,7 +511,6 @@ th {
   text-align:inherit;
   text-align:-webkit-match-parent
 }
-
 .social-icon {
   display:flex;
   align-items:center;
@@ -618,45 +563,38 @@ th {
   position:relative;
   top:1px
 }
+
 /*Patron 4*/
   .image-strip {
     display: flex;
-    justify-content: flex-start; /* Alinea las imágenes a la izquierda */
-    /*width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-    flex-wrap: wrap; /* Permite que las imágenes se ajusten a la siguiente línea si es necesario */
+    justify-content: flex-start; 
+    width: 100%; 
+    flex-wrap: wrap; 
   }
-  /* Asegurar que las imágenes sean responsivas */
   img {
         max-width: 100%;
         height: auto;
     }
-
-    /* Media query para dispositivos más pequeños como el iPad */
     @media (max-width: 768px) {
         .col-12 {
-            flex: 0 0 100%; /* Hacer que las columnas ocupen el 100% del ancho */
+            flex: 0 0 100%; 
             margin-bottom: 10px;
         }
-
-        /* Reducir márgenes y padding para pantallas más pequeñas */
         .container {
             padding-left: 10px;
             padding-right: 10px;
         }
-
         .main-footer .list-info {
-            padding: 20px 10px;
-        }
-
+            padding: 20px 10px;}
         .main-footer .list-info h5 {
-            font-size: 16px;
-        }
-
+            font-size: 16px;}
         .main-footer .list-info a {
             font-size: 13px;
         }
     }
   .section-background {
-    background-color: #611232; /* Color de fondo deseado */
-    padding: 5px; /* Agrega un poco de espacio alrededor del contenido */
+    background-color: #611232; 
+    padding: 5px; 
   }
+
+
